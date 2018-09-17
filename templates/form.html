@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <title>FORM OF AJAX</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- <script src="{{ url_for('static', filename='js/form.js') }}"></script> -->
+        <script>
+            $(function() {
+                $('#submit').click(function(event){
+                    $.ajax({
+                        url: '/process',
+                        data: 'Success!',
+                        type: 'POST',
+                        success: function(response) {
+                            console.log(response);
+                            document.getElementById('display').innerHTML = response
+                        },
+                        error: function(error) {
+                            console.log(error);
+                        }
+                    });
+                });
+            });
+        </script>
+ 
+    </head>
+
+    <body>
+        <!-- <form class="form-inline">
+            <label class="sr-only" for="emailinput">Email Address</label>
+            <input type="email" class="form control" id="emailinput" placeholder="Email">
+
+            <label class="sr-only" for="nameinput">Name</label>
+            <input type="name" class="form control" id="nameinput" placeholder="Name">
+
+            <input type="checkbox" class="form control" id="verifyrobot" placeholder="Check">I'm not a robot<br>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <h2 id="SuccessAlert" style="display:none;">Success!</h2>
+        <h2 id="ErrorAlert" style="display:none;">Error!</h2> -->
+        <button type="submit" id="submit">FUCK ME DADDY</button>
+        <span id="display">#</span>
+    </body>
+
+</html>
